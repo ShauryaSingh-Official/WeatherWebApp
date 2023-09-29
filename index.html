@@ -18,6 +18,15 @@
         <h1 class="Heading">Weather Dashboard</h1>
       </div>
 
+      <header id="header">
+        <div class="conversion">
+          <select id="unit">
+            <option value=0>Celcius</option>
+            <option value=1>Fahrenhiet</option>
+          </select>
+        </div>
+      </header>
+
       <article class="searchArea">
         <section>
           <input
@@ -40,7 +49,7 @@
       <article class="WeatherConditions">
         <section class="weatherHead container">
           <div class="mainWeatherHead">
-            <h2><span class="largeTemp" id="temperature"></span>  &deg;C</h2>
+            <h2><span class="largeTemp" id="temperature"></span>  <span id="unitsym">&deg;C</span></h2>
             <h3 <span id="weatherType"></span></h3>
         </div>
         <h3 id="locationFound" <i class="fa-solid fa-location-dot" style="color: #00bfff;"></i> <span id="city"></span> </h3>

@@ -1,10 +1,13 @@
 let data;
+let tempeC;
 let locObj; // store user geolocation (fetched automatically)
 let cityNameProvided = document.getElementById("locationSearched");
 
 let cityName = document.getElementById("city");
 let weather = document.getElementById("weatherType");
 let temperature = document.getElementById("temperature");
+let unitsym = document.getElementById("unitsym");
+
 let humidity = document.getElementById("humidity");
 let pressure = document.getElementById("pressure");
 let wind = document.getElementById("wind");
@@ -34,6 +37,7 @@ const getWeather = async () => {
   
   const setValues = (data) => {
     temperature.innerHTML = data.main.temp; // degree celcius / fahrenhiet
+    tempC = data.main.temp;
     humidity.innerHTML = data.main.humidity;
     pressure.innerHTML = data.main.pressure;
     wind.innerHTML = data.wind.speed; // km/hr
@@ -89,6 +93,25 @@ getWeatherBtn.addEventListener("click", (e) => {
     getWeather();
   }
 });
+
+const getunit = document.getElementById("unit");
+getunit.addEventListener("change",()=>{
+    if(!getunit.value){
+        temperature.innerHTML = data.main.temp;
+        unitsym.innerHTML = "&deg;C";
+    }
+    else if(getunit.value){
+        let tempe = (data.main.temp*9/5)+32;
+        temperature.innerHTML = tempe;
+        unitsym.innerHTML = "Fah";
+        
+    }
+    
+})
+
+
+
+
 
 // error handle ()
 // type conversion btn
