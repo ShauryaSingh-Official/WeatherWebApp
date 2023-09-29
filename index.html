@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="style-sheet" />
+    <script src="./index.js" defer></script>
+    <link rel="stylesheet" href="./index.css" />
+    <meta name="author" content="Shauraya Singh - (Sourav Kumar)" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+    <script src="https://kit.fontawesome.com/033511e715.js" crossorigin="anonymous"></script>
+    <title>Weather -- SS</title>
+  </head>
+  <body>
+    <main>
+        <!-- <img class="backgroundImage" src="./images/sky.jpg" alt="background image"> -->
+      <div class="HeadingContainer">
+        <h1 class="Heading">Weather Dashboard</h1>
+      </div>
+
+      <article class="searchArea">
+        <section>
+          <input
+            type="text"
+            placeholder="Enter your city or zip code"
+            class="searchBar"
+            id="locationSearched"
+          />
+        </section>
+        <section>
+          <input
+            type="button"
+            class="getWeatherBtn"
+            id="getWeather"
+            value="Get Weather"
+          />
+        </section>
+      </article>
+
+      <article class="WeatherConditions">
+        <section class="weatherHead container">
+          <div class="mainWeatherHead">
+            <h2><span class="largeTemp" id="temperature"></span>  &deg;C</h2>
+            <h3 <span id="weatherType"></span></h3>
+        </div>
+        <h3 id="locationFound" <i class="fa-solid fa-location-dot" style="color: #00bfff;"></i> <span id="city"></span> </h3>
+        </section>
+
+        <div class="detailsArea container">
+            <section class="weatherRecord">
+                <h2>Weather Details</h2>
+                <hr />
+
+                <table >
+                    <tr>
+                        <th>Humidity</th>
+                        <td> <span id="humidity"></span> %</td>
+                    </tr>
+                    <tr>
+                        <th >Pressure</th>
+                        <td> <span id="pressure"></span> hPa</td>
+                    </tr>
+                    <tr>
+                        <th >Wind</th>
+                        <td> <span id="wind"></span> m/sec</td>
+                    </tr>
+                    <tr>
+                        <th >Description</th>
+                        <td> <span id="description"></span> </td>
+                    </tr>
+                    <tr>
+                        <th >Visibility</th>
+                        <td> <span id="visibility"></span> m</td>
+                    </tr>
+        
+                </table>
+
+              </section>
+      
+              <section class="location">
+                <h2>Location</h2>
+                <hr />
+                <table >
+                    <tr>
+                        <th >Latitude</th>
+                        <td id="lattitude"></td>
+                    </tr>
+                    <tr>
+                        <th >longitude</th>
+                        <td id="longititude"></td>
+                    </tr>
+                    <tr>
+                        <th >Feels Like</th>
+                        <td> <span id="feelsLike"></span> &deg;C</td>
+                    </tr>
+                    <tr>
+                        <th >Country</th>
+                        <td id="country"></td>
+                    </tr>
+                </table>
+                
+              </section>
+        </div>
+
+      </article>
+
+      <footer><p>&copy Shaurya Singh 2023. All Rights Reserved.</p></footer>
+    </main>
+  </body>
+</html>

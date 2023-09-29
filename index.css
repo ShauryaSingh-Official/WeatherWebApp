@@ -1,0 +1,202 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* .backgroundImage{
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    object-position: center;
+    z-index: -99;
+} */
+
+body{
+    background-image: url(./images/sky.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height:100vh;
+}
+
+.container{
+    min-width: 275px;
+    width: 85%;
+    margin: 1rem auto;
+    background-color: #fff;
+}
+
+
+.Heading{
+    font-size: 2.2rem;
+    text-align: center;
+    padding: 1.5rem 0;
+    text-transform: uppercase;
+}
+
+.searchArea{
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 0;  
+}
+
+.searchArea .searchBar{
+    padding: 0.35rem 6rem;
+    padding-left: 3rem;
+    border-top-left-radius: 0.3rem;
+    border-bottom-left-radius: 0.3rem;
+    font-size: 1rem;
+    border-right: none ;
+    box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.2);
+}
+
+.searchArea .getWeatherBtn{
+    padding: 0.35rem 3rem;
+    border-top-right-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+    border-left: none;
+    font-weight: bold;
+    background:rgba(0,191,255,0.4);
+    box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.2);
+    font-size: 1rem;
+}
+
+.detailsArea{
+    display: flex;
+    justify-content: space-between;
+    background: transparent;
+}
+
+.weatherHead{
+    background: transparent;
+}
+
+
+.location , .weatherRecord{
+    text-align: left;
+    width: 45%;
+    background: linear-gradient(to top, rgba(114,220,255,0.9),rgb(177, 236, 255,0.95));
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.4);
+    /* background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1); */
+    border: 1px solid rgba(0,0,0,0.5);
+    outline: none;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.location>h2, .weatherRecord>h2{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+
+
+
+hr{
+    margin: 0.5rem 0;
+}
+
+table{
+    width: 100%;
+    border: none;
+    outline: none;
+    margin: 1rem;
+}
+table th, table td{
+    padding: 0.25rem;
+}
+
+
+#temperature{
+    font-size: 2.5rem;
+}
+.weatherHead h3{
+    font-size:2rem ;   
+
+   }
+#locationFound{
+    font-size :1.2rem;
+    margin:1rem 0;
+}
+   
+.mainWeatherHead{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+/* ######################################### FOOTER ######################################### */
+
+footer p{
+    position:relative;
+    margin: 0 auto;
+    padding: 1.25rem 0;
+    text-align: center;
+    bottom: 0%;
+    width: 100%;
+  }
+
+
+  /* ################################################## MEDIA QUERIES ############################################################*/
+@media(max-width:350px){
+    .searchArea{
+        display:inline-block ;
+        text-align: center;
+        width: 100%;
+
+    }
+    .searchArea .searchBar{
+        border: 1px solid black;
+        border-radius: 0.3rem;
+        margin: 0.5rem;
+    }
+    .searchArea .getWeatherBtn{
+        border: 1px solid black;
+        border-radius: 0.3rem;
+    }
+}
+
+@media(max-width:600px){
+    .detailsArea{
+        flex-wrap: wrap;
+        align-content: space-between;
+        
+    }
+    .location , .weatherRecord{
+        width: 100%;
+        margin: 0;
+        padding: 1rem;
+    }
+    .weatherRecord{
+        margin-bottom: 1rem;
+    }
+    .searchArea .searchBar{
+        padding: 0.25rem 2rem;
+        padding-left: 1rem;
+        font-size: 0.8rem;
+        box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.2);
+    }
+    .searchArea .getWeatherBtn{
+        padding: 0.25rem 0.5rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media(max-width:768px){
+    .Heading{
+        font-size: 1.4rem;
+        padding: 1rem 0;
+    } 
+    #temperature{
+        font-size: 1.8rem;
+    }
+    .weatherHead h3{
+        font-size:1.4rem ;   
+       }
+       #locationFound{
+        font-size :1rem
+    }
+}
