@@ -2,11 +2,11 @@ let data;
 let tempeC;
 let locObj; // store user geolocation (fetched automatically)
 let cityNameProvided = document.getElementById("locationSearched");
-
+let getunit = document.getElementById("unit");
 let cityName = document.getElementById("city");
 let weather = document.getElementById("weatherType");
 let temperature = document.getElementById("temperature");
-let unitsym = document.getElementById("unitsym");
+let unitsym = document.getElementsByClassName("unitsym");
 
 let humidity = document.getElementById("humidity");
 let pressure = document.getElementById("pressure");
@@ -19,11 +19,28 @@ let feelsLike = document.getElementById("feelsLike");
 let country = document.getElementById("country");
 
 
+// #################################################get city###############################################################
+const getCity= async ()=>{
+  let URLZIPCode = "https://api.openweathermap.org/data/2.5/weather?zip="+cityNameProvided.value+",IN&appid=657cdd6c56a859874d12b8cae9f10ecf";
+  let zipdata = await fetch(URLZIPCode);
+  console.log(zipdata.json());
+}
 //   ####################################################################################################################
+
 var resp;
 const getWeather = async () => {
-    
-     let url = "https://api.openweathermap.org/data/2.5/weather?q=" + cityNameProvided.value + "&appid=657cdd6c56a859874d12b8cae9f10ecf&units=metric";
+  console.log(typeof cityNameProvided.value);
+  if(cityNameProvided.value ==Number){
+    getCity();
+  }
+  let url;
+    if(getunit.value==0){
+      url = "https://api.openweathermap.org/data/2.5/weather?q="+cityNameProvided.value+"&appid=657cdd6c56a859874d12b8cae9f10ecf&units=metric";
+    }
+    if(getunit.value==1){
+      url = "https://api.openweathermap.org/data/2.5/weather?q="+cityNameProvided.value+"&appid=657cdd6c56a859874d12b8cae9f10ecf&units=imperial";
+    }
+     
       resp = await fetch(url);
   
       if (!resp.ok) {
@@ -51,6 +68,8 @@ const getWeather = async () => {
     cityName.innerHTML = data.name;
   };
 
+  // ##################################################################################################################
+
 // #######################################################################################################################
 function getLocation() {
   if (navigator.geolocation) {
@@ -71,7 +90,7 @@ function showPosition(position) {
     (async () => {
          resp = await fetch(url2);    
          if (!resp.ok) {
-             alert(resp.status);
+             alert("${resp.status}");
              throw new Error("Error: ${resp.status}");
            } else {
              data = await resp.json();
@@ -94,26 +113,35 @@ getWeatherBtn.addEventListener("click", (e) => {
   }
 });
 
-const getunit = document.getElementById("unit");
+
+  let tempe ;
+  let tempflF;
+  
+  if(data){
+    tempe =data.main.temp ;
+    tempflF=data.main.feels_like;
+    console.log("${tempe}, ${tempflF}")  
+  }
 getunit.addEventListener("change",()=>{
-    if(!getunit.value){
-        temperature.innerHTML = data.main.temp;
-        unitsym.innerHTML = "&deg;C";
+  console.log(getunit.value)
+    if(getunit.value==1){
+      console.log("Im reachable F")
+        tempe = (data.main.temp*9/5)+32;
+        tempflF = (data.main.feels_like*9/5)+32;
+        temperature.innerHTML = tempe.toFixed(2);
+        feelsLike.innerHTML = tempflF;
+        unitsym[0].innerHTML = "Fah";    
+        unitsym[1].innerHTML = "Fah";    
     }
-    else if(getunit.value){
-        let tempe = (data.main.temp*9/5)+32;
-        temperature.innerHTML = tempe;
-        unitsym.innerHTML = "Fah";
-        
+    else if(getunit.value==0){
+      console.log("Im reachable")
+        temperature.innerHTML = ((tempe-32) * 5/9).toFixed(2) ;
+        feelsLike.innerHTML=(tempflF-32) * 5/9;
+        unitsym[0].innerHTML = "&deg;C";
+        unitsym[1].innerHTML = "&deg;C";
     }
-    
 })
 
 
 
 
-
-// error handle ()
-// type conversion btn
-// font change
-// ask location and pin code search
