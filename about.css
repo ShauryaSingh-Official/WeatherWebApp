@@ -1,0 +1,122 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(./images/sky.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: calc( 100vh - 50px );
+}
+
+.container{
+    min-width: 275px;
+    width: 85%;
+    margin: 1rem auto;
+    background-color: #fff;
+}
+
+
+.navigation{
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 1rem;
+    background: linear-gradient(to top, rgba(114,220,255,0.9),rgb(177, 236, 255,0.95));
+    border-bottom: 1px solid rgba(0,191,255,1);
+    margin-bottom: 1rem ;
+}
+
+.navigation .links-container{
+margin-right: 1rem;
+}
+
+.navigation ul li{
+    list-style: none;
+    display: inline;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0.3rem;
+}
+
+.navigation .links-container a{
+    text-decoration: none;
+    padding: 1rem;   
+    color:#454545;
+    transition: all 0.2s ease-in;
+}
+.navigation ul a:hover{
+    color: rgba(0,181,245,1);
+    text-decoration: underline;
+    transform: scale(1.2);
+    
+}
+
+
+
+
+ article h1{
+    font-size: 2rem;
+    text-decoration: underline;
+  }
+
+.subHeading{
+    display: block;
+    margin-bottom: 0.1rem;
+    margin-top: 0.5rem;
+}
+  article{
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+  }
+  .container{
+    margin-top: 2.5rem;
+  }
+
+  article ul{
+    padding: 0 1rem;
+  }
+
+
+  footer p{
+    position:sticky;
+    margin: 0 auto;
+    padding: 0.8rem 0;
+    text-align: center;
+    margin-top: 5rem;
+    /* top: 100%; */
+    bottom: 0%;
+    width: 100%;
+    background: linear-gradient(to top, rgba(114,220,255,0.9),rgb(177, 236, 255,0.95));
+    border-top: 1px solid rgba(0,191,255,1); 
+  }
+
+
+  /* footer p{
+    position:relative;
+    margin: 0 auto;
+    padding: 0.8rem 0;
+    text-align: center;
+    top: 100%;
+    width: 100%;
+    margin-top: 5rem;
+    background: linear-gradient(to top, rgba(114,220,255,0.9),rgb(177, 236, 255,0.95));
+    border-top: 1px solid rgba(0,191,255,1); 
+  } */
+
+  /* ################################################# */
+
+  @media(max-width:350px){
+    .navigation ul li{
+      font-size: 1rem;
+  }
+  
+  .navigation .links-container a{
+      padding: 0;   
+  }
+  }

@@ -9,20 +9,27 @@
     <meta name="author" content="Shauraya Singh - (Sourav Kumar)" />
     <link rel="icon" href="./favicon.ico" type="image/x-icon" />
     <script src="https://kit.fontawesome.com/033511e715.js" crossorigin="anonymous"></script>
-    <title>Weather -- SS</title>
+    <title>Weather App - dev by Sourav</title>
   </head>
   <body>
     <main>
-        <!-- <img class="backgroundImage" src="./images/sky.jpg" alt="background image"> -->
+      <div class="navigation">
+        <h2 class="logo">WD</h2>
+        <ul class="links-container">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+        </ul>
+      </div>
+
       <div class="HeadingContainer">
         <h1 class="Heading">Weather Dashboard</h1>
       </div>
 
       <header id="header">
-        <div class="conversion">Unit : 
+        <div class="conversion"><span class="unitLabel">Unit : </span> 
           <select id="unit">
-            <option value=0>Celcius</option>
-            <option value=1>Fahrenhiet</option>
+            <option value="metric">Celcius</option>
+            <option value="imperial">Fahrenhiet</option>
           </select>
         </div>
       </header>
@@ -49,8 +56,8 @@
       <article class="WeatherConditions">
         <section class="weatherHead container">
           <div class="mainWeatherHead">
-            <h2><span class="largeTemp" id="temperature"></span>  <span class="unitsym">&deg;C</span></h2>
-            <h3 <span id="weatherType"></span></h3>
+            <h2><span class="largeTemp" id="temperature"></span>  <span class="unitsymbol">&deg;C</span></h2>
+            <h3> <span id="weatherType"></span></h3>
         </div>
         <h3 id="locationFound" <i class="fa-solid fa-location-dot" style="color: #00bfff;"></i> <span id="city"></span> </h3>
         </section>
@@ -100,7 +107,7 @@
                     </tr>
                     <tr>
                         <th >Feels Like</th>
-                        <td> <span id="feelsLike"></span> <span class="unitsym">&deg;C</span></td>
+                        <td> <span id="feelsLike"></span> <span class="unitsymbol">&deg;C</span></td>
                     </tr>
                     <tr>
                         <th >Country</th>
@@ -112,7 +119,7 @@
         </div>
 
       </article>
-
+      
       <footer><p>&copy Shaurya Singh 2023. All Rights Reserved.</p></footer>
     </main>
   </body>
